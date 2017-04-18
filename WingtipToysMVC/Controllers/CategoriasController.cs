@@ -10,6 +10,12 @@ namespace WingtipToysMVC.Controllers
     {
         private WingtipToysMVCContext banco = new WingtipToysMVCContext();
 
+        public JsonResult AutoCompleteNome(string prefixo)
+        {
+            var categorias = banco.Categorias.Where(c => c.Nome.Contains(prefixo));
+            return Json(categorias, JsonRequestBehavior.AllowGet);
+        }
+
         // GET: Categorias  (www.meusistema.com/Categorias)
         public ActionResult Index(string filtroNome)
         {
