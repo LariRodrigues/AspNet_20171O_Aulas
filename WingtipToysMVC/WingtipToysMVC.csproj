@@ -193,10 +193,22 @@
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\WingtipToysMVCContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorios\dsAlunos2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAlunos2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Relatorios\dsRelatorio1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsRelatorio1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\frmAlunos2.aspx.cs">
+      <DependentUpon>frmAlunos2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\frmAlunos2.aspx.designer.cs">
+      <DependentUpon>frmAlunos2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Relatorios\TelaRelatorios.aspx.cs">
       <DependentUpon>TelaRelatorios.aspx</DependentUpon>
@@ -208,6 +220,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-WingtipToysMVC-20170404095950.mdf" />
+    <Content Include="App_Data\aspnet-WingtipToysMVC-20170404095950_log.ldf">
+      <DependentUpon>aspnet-WingtipToysMVC-20170404095950.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -216,6 +232,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Relatorios\frmAlunos2.aspx" />
     <Content Include="Relatorios\TelaRelatorios.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -229,6 +246,17 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Relatorios\dsRelatorio1.xsc">
       <DependentUpon>dsRelatorio1.xsd</DependentUpon>
+    </Content>
+    <Content Include="Relatorios\dsAlunos2.xsc">
+      <DependentUpon>dsAlunos2.xsd</DependentUpon>
+    </Content>
+    <None Include="Relatorios\dsAlunos2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAlunos2.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Relatorios\dsAlunos2.xss">
+      <DependentUpon>dsAlunos2.xsd</DependentUpon>
     </Content>
     <None Include="Relatorios\dsRelatorio1.xsd">
       <SubType>Designer</SubType>
@@ -300,15 +328,14 @@
     <Content Include="Views\Categorias\Delete.cshtml" />
     <Content Include="Views\Categorias\DetalhesCategoria.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Relatorios\Relatorio1.rdlc" />
+    <EmbeddedResource Include="Relatorios\rptAlunos2.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

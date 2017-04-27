@@ -24,10 +24,20 @@ namespace WingtipToysMVC.Relatorios
                         ds.dtProdutos.AdddtProdutosRow(p.Nome, p.Descricao, p._Categoria.Nome);
                     }
 
-                    rvRelatorios.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
-                    rvRelatorios.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath + @"Relatorios\Relatorio1.rdlc");
+                    rvRelatorios.ProcessingMode = 
+                        Microsoft.Reporting.WebForms.ProcessingMode.Local;
+
+                    rvRelatorios.LocalReport.ReportPath = 
+                        Request.MapPath(Request.ApplicationPath + @"Relatorios\Relatorio1.rdlc");
+
                     rvRelatorios.LocalReport.DataSources.Clear();
-                    rvRelatorios.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("dsRelatorio1", (DataTable)ds.dtProdutos));
+
+                    rvRelatorios.LocalReport.DataSources.Add(
+                        new Microsoft.Reporting.WebForms.ReportDataSource(
+                            "dsRelatorio1", (DataTable)ds.dtProdutos
+                            )
+                            );
+
                     rvRelatorios.LocalReport.Refresh();
                 }
             }
